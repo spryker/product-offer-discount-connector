@@ -13,13 +13,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface ProductOfferDecisionRuleCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isProductOfferReferenceSatisfiedBy(
         QuoteTransfer $quoteTransfer,
         ItemTransfer $itemTransfer,

@@ -24,12 +24,6 @@ class ProductOfferDiscountConnectorToDiscountFacadeBridge implements ProductOffe
         $this->discountFacade = $discountFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     * @param string $compareWith
-     *
-     * @return bool
-     */
     public function queryStringCompare(ClauseTransfer $clauseTransfer, string $compareWith): bool
     {
         return $this->discountFacade->queryStringCompare($clauseTransfer, $compareWith);

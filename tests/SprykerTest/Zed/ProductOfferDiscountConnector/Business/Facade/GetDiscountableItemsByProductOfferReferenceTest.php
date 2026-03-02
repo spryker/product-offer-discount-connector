@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\SalesDiscountConnector\Business\Facade;
+namespace SprykerTest\Zed\ProductOfferDiscountConnector\Business\Facade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\CalculatedDiscountTransfer;
@@ -19,7 +19,7 @@ use SprykerTest\Zed\ProductOfferDiscountConnector\ProductOfferDiscountConnectorB
  *
  * @group SprykerTest
  * @group Zed
- * @group SalesDiscountConnector
+ * @group ProductOfferDiscountConnector
  * @group Business
  * @group Facade
  * @group GetDiscountableItemsByProductOfferReferenceTest
@@ -58,9 +58,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
      */
     protected ProductOfferDiscountConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsDiscountableItemsWithMatchedProductOfferReferenceOnly(): void
     {
         // Arrange
@@ -91,9 +88,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCorrectlyMapsItemTransferToDiscountableItemTransferWithNetPriceMode(): void
     {
         // Arrange
@@ -117,9 +111,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
         $this->assertDiscountableItemProperties($discountableItemTransfers, $itemTransfer, $calculatedDiscountTransfer, static::PRICE_MODE_NET);
     }
 
-    /**
-     * @return void
-     */
     public function testCorrectlyMapsItemTransferToDiscountableItemTransferWithGrossPriceMode(): void
     {
         // Arrange
@@ -143,9 +134,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
         $this->assertDiscountableItemProperties($discountableItemTransfers, $itemTransfer, $calculatedDiscountTransfer, static::PRICE_MODE_GROSS);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsNulValueExceptionWhenQuutePriceModeIsNotSet(): void
     {
         // Arrange
@@ -163,9 +151,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
             ->getDiscountableItemsByProductOfferReference($quoteTransfer, $clauseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsNulValueExceptionWhenItemUnitNetPriceIsNotSet(): void
     {
         // Arrange
@@ -183,9 +168,6 @@ class GetDiscountableItemsByProductOfferReferenceTest extends Unit
             ->getDiscountableItemsByProductOfferReference($quoteTransfer, $clauseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsNulValueExceptionWhenItemUnitGrossPriceIsNotSet(): void
     {
         // Arrange

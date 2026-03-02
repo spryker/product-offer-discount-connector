@@ -19,21 +19,11 @@ class ProductOfferDecisionRuleChecker implements ProductOfferDecisionRuleChecker
      */
     protected ProductOfferDiscountConnectorToDiscountFacadeInterface $discountFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductOfferDiscountConnector\Dependency\Facade\ProductOfferDiscountConnectorToDiscountFacadeInterface $discountFacade
-     */
     public function __construct(ProductOfferDiscountConnectorToDiscountFacadeInterface $discountFacade)
     {
         $this->discountFacade = $discountFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isProductOfferReferenceSatisfiedBy(
         QuoteTransfer $quoteTransfer,
         ItemTransfer $itemTransfer,

@@ -17,25 +17,16 @@ use Spryker\Zed\ProductOfferDiscountConnector\ProductOfferDiscountConnectorDepen
 
 class ProductOfferDiscountConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductOfferDiscountConnector\Business\Checker\ProductOfferDecisionRuleCheckerInterface
-     */
     public function createProductOfferDecisionRuleChecker(): ProductOfferDecisionRuleCheckerInterface
     {
         return new ProductOfferDecisionRuleChecker($this->getDiscountFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\ProductOfferDiscountConnector\Business\Collector\ProductOfferDiscountableItemCollectorInterface
-     */
     public function createProductOfferDiscountableItemCollector(): ProductOfferDiscountableItemCollectorInterface
     {
         return new ProductOfferDiscountableItemCollector($this->createProductOfferDecisionRuleChecker());
     }
 
-    /**
-     * @return \Spryker\Zed\ProductOfferDiscountConnector\Dependency\Facade\ProductOfferDiscountConnectorToDiscountFacadeInterface
-     */
     public function getDiscountFacade(): ProductOfferDiscountConnectorToDiscountFacadeInterface
     {
         return $this->getProvidedDependency(ProductOfferDiscountConnectorDependencyProvider::FACADE_DISCOUNT);

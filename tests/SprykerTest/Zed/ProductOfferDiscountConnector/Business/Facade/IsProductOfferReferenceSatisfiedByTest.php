@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\SalesDiscountConnector\Business\Facade;
+namespace SprykerTest\Zed\ProductOfferDiscountConnector\Business\Facade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ItemTransfer;
@@ -17,7 +17,7 @@ use SprykerTest\Zed\ProductOfferDiscountConnector\ProductOfferDiscountConnectorB
  *
  * @group SprykerTest
  * @group Zed
- * @group SalesDiscountConnector
+ * @group ProductOfferDiscountConnector
  * @group Business
  * @group Facade
  * @group IsProductOfferReferenceSatisfiedByTest
@@ -42,9 +42,6 @@ class IsProductOfferReferenceSatisfiedByTest extends Unit
      */
     protected ProductOfferDiscountConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenProductOfferReferenceMatchesTheClause(): void
     {
         // Act
@@ -60,9 +57,6 @@ class IsProductOfferReferenceSatisfiedByTest extends Unit
         $this->assertTrue($isProductOfferReferenceSatisfiedBy);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenProductOfferReferenceDoesNotMatchTheClause(): void
     {
         // Act
@@ -78,9 +72,6 @@ class IsProductOfferReferenceSatisfiedByTest extends Unit
         $this->assertFalse($isProductOfferReferenceSatisfiedBy);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenProductOfferReferenceIsNotSetToItem(): void
     {
         // Act

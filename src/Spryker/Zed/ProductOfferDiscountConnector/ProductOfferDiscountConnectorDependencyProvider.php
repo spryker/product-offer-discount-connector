@@ -18,11 +18,6 @@ class ProductOfferDiscountConnectorDependencyProvider extends AbstractBundleDepe
      */
     public const FACADE_DISCOUNT = 'FACADE_DISCOUNT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -31,11 +26,6 @@ class ProductOfferDiscountConnectorDependencyProvider extends AbstractBundleDepe
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDiscountFacade(Container $container): Container
     {
         $container->set(static::FACADE_DISCOUNT, function (Container $container) {
